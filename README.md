@@ -110,7 +110,7 @@ cf hcp-spring-demo
 # package war file, profile is necessary
 mvn package -Plog
 # create a database instance (only need to be executed onece)
-cf create-service postgresql v9.6-dev psql
+cf create-service postgresql v9.4-dev psql
 # deploy to cloud foundry
 cf push
 ```
