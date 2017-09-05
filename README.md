@@ -1,6 +1,6 @@
 # run app on SAP's Cloud Foundry
 
-Yap, SAP提供有限而不限时长的Cloud Foundry使用，不过使用方式略微麻烦。
+Yap, SAP提供有限而不限时长的Cloud Foundry内存，申请过程也比较简单。
 
 这篇文章将会从头至尾演示如何在SAP的Cloud Foundry上部署一个应用。
 
