@@ -119,4 +119,4 @@ cf push
 
 如果成功的话，访问你的route即可。
 
-需要注意的是，这个Sample Application根路径下是没有映射，需要访问https://cfapps-url/rest才有内容
+需要注意的是，这个Sample Application根路径下是没有映射，需要访问`https://cfapps-url/rest`才有内容
