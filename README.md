@@ -38,9 +38,9 @@ cf buildpacks
 
 ## build，deploy
 
-如果你对于Cloud Foundry平台有一定了解，现在你就可以部署应用并离开这个页面。
+如果你对于Cloud Foundry平台有一定了解，现在你就可以离开这个页面并部署自己的应用。
 
-如果没有相关经验，我们可以先看看平台支持哪些语言。
+如果你没有相关经验，我们可以从部署一个Spring Boot Sample开始
 
 ---
 
@@ -63,9 +63,9 @@ dotnet_core_buildpack   9          true      false    dotnet-core-buildpack-v1.0
 sap_java_buildpack      10         true      false    sap_java_buildpack-v1.6.10.zip
 ```
 
-cloudfoundry可运行包括`java, go, node, python`在内的主流应用。
+cloud foundry原生支持包括`java, go, node, python`在内的主流语言和框架。
 
-以`java_buildpack`为例，只需要指定jar/war包即可运行，一个典型的java应用配置文件如下
+以`java_buildpack`为例，只需要上传jar/war包即可运行，一个典型的java配置文件`manifest.yml`如下
 
 ```yml
 ---
@@ -97,7 +97,7 @@ applications:
       SPRING_PROFILES_DEFAULT: cf-production
 ```
 
-这一份文档并不关注如何编写一个应用，请clone[这个仓库](https://github.com/Soontao/hcp-spring-demo)
+本文档并不关注如何编写一个应用，请clone[这个Sample Application](https://github.com/Soontao/hcp-spring-demo)
 
 在项目路径运行如下命令，即可在Cloud Foundry上部署一个spring boot应用
 
@@ -117,6 +117,6 @@ cf push
 
 ![](./attachments/push.gif)
 
-如果成功的话，访问你的route即可。
+如果成功的话，CLI在最后会列出应用的URL，访问即可。
 
 需要注意的是，这个Sample Application根路径下是没有映射，需要访问`https://cfapps-url/rest`才有内容
