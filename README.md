@@ -104,14 +104,19 @@ applications:
 请确定**maven**以及**java**已经配置正确
 
 ```bash
-# Create an instance of Database that only needs to be executed once
-cf create-service postgresql v9.6-dev psql
+# clone sample project
+git clone https://github.com/Soontao/hcp-spring-demo
+cf hcp-spring-demo
 # package war file, profile is necessary
 mvn package -Plog
+# create a database instance (only need to be executed onece)
+cf create-service postgresql v9.6-dev psql
 # deploy to cloud foundry
 cf push
 ```
 
 ![](./attachments/push.gif)
 
-如果成功的话，访问你的route即可。主要注意的是，这个Sample根路径下是404的，需要访问http://host/rest才有内容
+如果成功的话，访问你的route即可。
+
+需要注意的是，这个Sample Application根路径下是没有映射，需要访问https://cfapps-url/rest才有内容
