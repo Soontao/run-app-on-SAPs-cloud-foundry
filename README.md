@@ -87,14 +87,14 @@ applications:
     # 使用java构建包，主要是包含一个java环境
     buildpack: java_buildpack
 
-    # run "cf create-service postgresql v9.6-dev psql" to create service instance before first push
+    # run "cf create-service postgresql v9.4-dev psql" to create service instance before first push
     # bind a DB instance to this application
     services:
     - psql
 
     # spring profile
     env:
-      SPRING_PROFILES_DEFAULT: cf-production
+      spring.profiles.active: cloud,cf-production
 ```
 
 本文档并不关注如何编写一个应用，请clone[这个Sample Application](https://github.com/Soontao/hcp-spring-demo)
